@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class MemberServiceTest {
 
-    MemberService memberService = new MemberService();
+    MemberService memberService;
     MemoryMemberRepository memberRepository;
 
     @BeforeEach
@@ -49,15 +49,6 @@ class MemberServiceTest {
         //when
         memberService.join(member1);
         assertThrows(IllegalStateException.class, () -> memberService.join(member2));
-
-/*
-        try {
-            memberService.join(member2);
-            fail();
-        } catch (IllegalStateException e) {
-            assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
-        }
-*/
 
     }
 
